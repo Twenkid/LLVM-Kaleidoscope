@@ -1,0 +1,74 @@
+#Note: 12.1.2023
+1. WSL2, Ubuntu 20.04 in Windows 10, C++, clang, llvm
+2. Python, Windows 10
+
+1. WSL2, Ubuntu 20.04 in Windows 10, C++, clang, llvm
+
+* Install llvm with the .sh script
+
+./ llvm.sh 16
+
+16 - version (from 9 or so)
+
+* Go to a folder etc. ... Download Kaleidoscope code either from llvm repository examples
+or copy from the site.
+
+sudo apt-get install mlocate
+> locate /llvm-16 ... # etc. --> index
+
+//that was handy for some searches
+//a dir in a RAM drive for the project
+
+cd /mnt/z/c$ 
+
+sudo apt-get install llvm-16
+sudo apt-get install clang-16   #?
+
+clang++ -g 9.cpp -I KaleidoscopeJIT.h -Wl,--export-dynamic $(llvm
+-config --cxxflags --ldflags --system-libs --libs core orcjit native ) -O3 -o 9
+
+
+2. pykaleidoscope ...
+   anaconda ... (etc.)
+   conda install llvmlite
+   python ...
+
+tosh@DESKTOP-LQSDBBS:/mnt/z/c$ clang++ -g 8.cpp -I KaleidoscopeJIT.h -Wl,--export-dynamic $(llvm-config --cxxflags --ldflags --system-libs --libs core orcjit native ) -O3 -o 8
+tosh@DESKTOP-LQSDBBS:/mnt/z/c$ ./8
+
+# Press Ctrl-D to finish, to output
+
+ready> def f(x y) x*y;
+Read function definition:define double @f(double %x, double %y) {
+entry:
+  %y2 = alloca double, align 8
+  %x1 = alloca double, align 8
+  store double %x, ptr %x1, align 8
+  store double %y, ptr %y2, align 8
+  %x3 = load double, ptr %x1, align 8
+  %y4 = load double, ptr %y2, align 8
+  %multmp = fmul double %x3, %y4
+  ret double %multmp
+}
+
+Wrote output.o
+
+# tosh@DESKTOP-LQSDBBS:/mnt/z/c$ ctrl-d
+
+#main.cpp:
+#include <iostream>
+
+extern "C" {
+    double f(double, double);
+}
+
+int main() {
+    std::cout << "Mult of 3.0 and 7.0: " << f(3.0, 7.0) << std::endl;
+}
+
+tosh@DESKTOP-LQSDBBS:/mnt/z/c$ clang++ main.cpp output.o -o main
+tosh@DESKTOP-LQSDBBS:/mnt/z/c$ ./main
+Mult of 3.0 and 7.0: 21
+
+
+   
