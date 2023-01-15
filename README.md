@@ -3,4 +3,4 @@ Exercises with the LLVM example compiler, JIT compiler, debugger development Kel
 
 * pykaleidoscope is public domain from: https://github.com/eliben/pykaleidoscope
 * Kaleidoscope C++ code is from the site, I may have added/add in the future some additional notes, small changes etc.
-
+* https://raw.githubusercontent.com/llvm/llvm-project/main/llvm/examples/Kaleidoscope/include/KaleidoscopeJIT.h
