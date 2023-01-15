@@ -8,4 +8,6 @@ Exercises with the LLVM example compiler, JIT compiler, debugger development Kel
 ## Useful Links for other explorations
 
 * Download a directory from a github repo:
+(You need a token from github: https://github.com/settings/tokens )
+https://www.wikihow.com/Download-a-GitHub-Folder
 https://download-directory.github.io/?url=https://github.com/mrdoob/three.js/tree/dev/build
