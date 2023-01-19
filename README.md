@@ -7,6 +7,8 @@ Exercises with the LLVM example compiler, JIT compiler, debugger development Kel
 
 ## Clang-query-AST: AST matching, search, refactoring, ... study, use:
 
+https://github.com/Twenkid/LLVM-Kaleidoscope/blob/main/Clang-query-AST.md
+https://clang.llvm.org/docs/LibASTMatchers.html
 https://clang.llvm.org/docs/LibASTMatchersReference.html#traversal-matchers
 
 ## Useful Links for other explorations
