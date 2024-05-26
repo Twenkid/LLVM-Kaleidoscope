@@ -1,5 +1,22 @@
-# LLI LLC ... 24.5.2024
+# LLI LLC ... 24.5.2024 - 25.5
 
+* 25.5
+https://bugs.launchpad.net/ubuntu/+source/llvm-toolchain-14/+bug/2038340
+ apt install libstdc++-12-dev
+
+The clang packages in Ubuntu 22.04 jammy are unusable to compile a C++ program out of the box.
+
+Kaleidoscope llvm14
+http://transit.iut2.univ-grenoble-alpes.fr/cgi-bin/dwww/usr/share/doc/llvm-14-doc/html/tutorial/MyFirstLanguageFrontend/LangImpl10.html
+
+...
+ILL
+//chat.lmsys
+
+llvm.txt
+
+
+* 24.5
 ill f.ll
 clang++ -S -emit-llvm m.cpp -o m.ll
 llc -filetype=obj -relocation-model=pic f.ll -o f.o
